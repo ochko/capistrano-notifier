@@ -15,12 +15,12 @@ class Capistrano::Notifier::Mailer < ActionMailer::Base
   if ActionMailer::Base.respond_to?(:mail)
     def notice(text, from, subject, to, delivery_method, format)
       mail({
-        body: text,
-        delivery_method: delivery_method,
-        content_type: content_type_for_format(format),
-        from: from,
-        subject: subject,
-        to: to
+        :body => text,
+        :delivery_method => delivery_method,
+        :content_type => content_type_for_format(format),
+        :from => from,
+        :subject => subject,
+        :to => to
       })
     end
   else
